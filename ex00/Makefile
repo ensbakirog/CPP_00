@@ -18,8 +18,8 @@ RESET	:= \033[0m
 
 CC_MSG		:= @printf "$(CYAN)$(CC)$(RESET) $(YELLOW)$(FLAGS)$(RESET) $(MAGENTA)$(OBJ)$(RESET) -o $(GREEN)$(NAME)$(RESET)\n"
 SUCCESS_MSG	:= @printf "$(GREEN)$(NAME) has been compiled$(RESET)\n"
-CLEAN_MSG 	:= @printf "$(YELLOW)Object files removed$(RESET)\n"
-FCLEAN_MSG	:= @printf "Executable $(YELLOW)$(NAME)$(RESET) removed\n"
+CLEAN_MSG 	:= printf "$(YELLOW)Object files removed$(RESET)\n"
+FCLEAN_MSG	:= printf "Executable $(CYAN)$(NAME)$(RESET) removed\n"
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -31,12 +31,16 @@ $(NAME): $(OBJ)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
-	$(CLEAN_MSG)
+	@if [ -n "$(wildcard *.o)" ]; then \
+		$(RM) $(OBJ); \
+		$(CLEAN_MSG); \
+	fi
 
 fclean: clean
-	@$(RM) $(NAME)
-	$(FCLEAN_MSG)
+	@if [ -n "$(wildcard $(NAME))" ]; then \
+		$(RM) $(NAME); \
+		$(FCLEAN_MSG); \
+	fi
 
 re: fclean all
 
