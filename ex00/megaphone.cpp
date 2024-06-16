@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     {
         for (size_t i = 1; argv[i]; i++)
             for (size_t j = 0; argv[i][j]; j++)
-                std::cout << (char)(std::toupper(argv[i][j]));
+                std::cout << static_cast<char>((std::toupper(argv[i][j])));
     }
-    return (std::cout << std::endl, 0);
+    return (std::cout << std::endl, EXIT_SUCCESS);
 }
