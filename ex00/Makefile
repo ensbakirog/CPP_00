@@ -18,8 +18,8 @@ RESET	:= \033[0m
 
 CC_MSG		:= @printf "$(CYAN)$(CC)$(RESET) $(YELLOW)$(FLAGS)$(RESET) $(MAGENTA)$(OBJ)$(RESET) -o $(GREEN)$(NAME)$(RESET)\n"
 SUCCESS_MSG	:= @printf "$(GREEN)$(NAME) has been compiled$(RESET)\n"
-CLEAN_MSG 	:= printf "$(YELLOW)Object files removed$(RESET)\n"
-FCLEAN_MSG	:= printf "Executable $(CYAN)$(NAME)$(RESET) removed\n"
+CLEAN_MSG 	:= printf "$(RED)Object files removed$(RESET)\n"
+FCLEAN_MSG	:= printf "Executable $(RED)$(NAME)$(RESET) removed\n"
 all: $(NAME)
 
 $(NAME): $(OBJ)
