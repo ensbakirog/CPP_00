@@ -1,11 +1,11 @@
-NAME	:= Megaphone
+NAME	:= PhoneBook
 
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 
 CC		:= g++
 RM		:= rm -rf
 
-SRC		:= Megaphone.cpp
+SRC		:= PhoneBook.cpp
 OBJ		:= $(SRC:.cpp=.o)
 
 RED		:= \033[31m
