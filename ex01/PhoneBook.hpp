@@ -1,27 +1,28 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#define INTERFACE \
-    "  ┌───────────────────────────┐\n" \
-    "  │                           │\n" \
-    "  │         PhoneBook         │\n" \
-    "  │                           │\n" \
-    "  ├───────────────────────────┤\n" \
-    "  │  1. Add                   │\n" \
-    "  ├───────────────────────────┤\n" \
-    "  │  2. Search                │\n" \
-    "  ├───────────────────────────┤\n" \
-    "  │  3. Exit                  │\n" \
-    "  └───────────────────────────┘\n"
-    
-	#include <string>
+    #include "Contact.hpp"
 
-	class Contact
-	{
-	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nick_name;
-		std::string darkest_secret;
-	};
+    #define COUNT 8
+
+    #define INTERFACE \
+        "┌───────────────────────────┐\n" \
+        "│                           │\n" \
+        "│         PhoneBook         │\n" \
+        "│                           │\n" \
+        "├───────────────────────────┤\n" \
+        "│            ADD            │\n" \
+        "├───────────────────────────┤\n" \
+        "│          SEARCH           │\n" \
+        "├───────────────────────────┤\n" \
+        "│           EXIT            │\n" \
+        "└───────────────────────────┘\n"
+
+    class PhoneBook
+    {
+    private:
+        Contact contacts[COUNT];
+    public:
+        void add();
+    };
 #endif

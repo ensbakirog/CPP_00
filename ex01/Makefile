@@ -5,7 +5,7 @@ FLAGS	:= -Wall -Wextra -Werror -std=c++98
 CC		:= g++
 RM		:= rm -rf
 
-SRC		:= PhoneBook.cpp
+SRC		:= Main.cpp PhoneBook.cpp Contact.cpp
 OBJ		:= $(SRC:.cpp=.o)
 
 RED		:= \033[31m
