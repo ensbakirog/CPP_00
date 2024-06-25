@@ -1,5 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 PhoneBook::PhoneBook() : currentIndex(0), countOfMember(0) {}
 
@@ -36,6 +38,9 @@ void PhoneBook::add()
     contacts[currentIndex].setDarkestSecret(darkestSecret);
 
     currentIndex = (++currentIndex) % COUNT;
+    countOfMember = (countOfMember < COUNT) ? ++countOfMember : COUNT;
+    std::cout << GREEN << "Contact added successfully! " << RESET << "[" << countOfMember << "/" << COUNT << "]" << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(2));
 }
 int PhoneBook::getCountOfMember() const
 {
@@ -45,5 +50,5 @@ int PhoneBook::getCountOfMember() const
 void PhoneBook::search()
 {
     std::system("clear");
-    
+
 }
