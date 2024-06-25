@@ -16,7 +16,7 @@ int main()
         if (option == "ADD")
             phone.add();
         else if (option == "SEARCH")
-            std::cout << "SEARCHİNG..." << std::endl;
+            phone.search();
         else if (option == "EXIT")
             std::cout << "Exiting program..." << std::endl;
         else

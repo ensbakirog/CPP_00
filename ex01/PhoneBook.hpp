@@ -5,24 +5,37 @@
 
     #define COUNT 8
 
-    #define INTERFACE \
-        "┌───────────────────────────┐\n" \
-        "│                           │\n" \
-        "│         PhoneBook         │\n" \
-        "│                           │\n" \
-        "├───────────────────────────┤\n" \
-        "│            ADD            │\n" \
-        "├───────────────────────────┤\n" \
-        "│          SEARCH           │\n" \
-        "├───────────────────────────┤\n" \
-        "│           EXIT            │\n" \
-        "└───────────────────────────┘\n"
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define WHITE "\033[37m"
 
+#define INTERFACE \
+    "┌───────────────────────────┐\n" \
+    "│                           │\n" \
+    "│         " GREEN "PhoneBook" RESET "         │\n" \
+    "│                           │\n" \
+    "├───────────────────────────┤\n" \
+    "│            " BLUE "ADD" RESET "            │\n" \
+    "├───────────────────────────┤\n" \
+    "│          " YELLOW "SEARCH" RESET "           │\n" \
+    "├───────────────────────────┤\n" \
+    "│           " RED "EXIT" RESET "            │\n" \
+    "└───────────────────────────┘\n"
     class PhoneBook
     {
     private:
         Contact contacts[COUNT];
+        int currentIndex;
+        int countOfMember;
     public:
+        PhoneBook();
         void add();
+        void search();
+        int getCountOfMember() const;
     };
 #endif
