@@ -18,7 +18,7 @@ int main()
         else if (option == "SEARCH")
             phone.search();
         else if (option == "EXIT")
-            std::cout << "Exiting program..." << std::endl;
+            std::cout << RED << "Exiting " << RESET << "program..." << std::endl;
     } while (option != "EXIT");
 
     return EXIT_SUCCESS;
