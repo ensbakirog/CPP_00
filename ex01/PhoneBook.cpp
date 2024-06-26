@@ -43,6 +43,7 @@ void PhoneBook::add()
     std::cout << GREEN << "Contact added SUCCESSFULLY! " << RESET << "[" << countOfMember << "/" << COUNT << "]" << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
 }
+
 int PhoneBook::getCountOfMember() const
 {
     return countOfMember;
@@ -59,7 +60,7 @@ void PhoneBook::search()
     }
     else
     {
-        std::string enes;
+        int index;
         std::string tmp;
 
         std::system("clear");
@@ -68,15 +69,35 @@ void PhoneBook::search()
         {
             std::cout << "|"
                       << std::setw(10) << i + 1 << "|"
-                      << std::setw(10) << contacts[i].getFirstName() << "|"
-                      << std::setw(10) << contacts[i].getLastName() << "|"
-                      << std::setw(10) << contacts[i].getNickname() << "|"
+                      << std::setw(10) << textDot(contacts[i].getFirstName(), 10) << "|"
+                      << std::setw(10) << textDot(contacts[i].getLastName(), 10) << "|"
+                      << std::setw(10) << textDot(contacts[i].getNickname(), 10) << "|"
                       << std::endl;
             if (i == (countOfMember - 1))
                 std::cout << LAST_LAYER;
             else
-                std::cout << LAYER;
+                std::cout << LAYER << std::endl;
         }
-        std::cin >> enes;
+        std::cout << "Select an index -> ";
+        std::cin >> index;
+
+        std::system("clear");
+        std::cout << "First Name : " << contacts[index - 1].getFirstName() << std::endl;
+        std::cout << "Last Name : " << contacts[index - 1].getLastName() << std::endl;
+        std::cout << "Nickname : " << contacts[index - 1].getNickname() << std::endl;
+        std::cout << "Phone Number : " << contacts[index - 1].getPhoneNumber() << std::endl;
+        std::cout << "Darkest Secret : " << contacts[index - 1].getDarkestSecret() << std::endl;
+
+        std::cout << "Please press enter to go back to the main menu" << std::endl;
+        std::cin.ignore();
+        std::cin.get();
     }
+}
+
+std::string PhoneBook::textDot(std::string str, int size)
+{
+    if ((int)str.length() <= size)
+        return str;
+    else
+        return str.substr(0, size - 1) + ".";
 }

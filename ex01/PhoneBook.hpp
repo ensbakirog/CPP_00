@@ -49,5 +49,6 @@
         void add();
         void search();
         int getCountOfMember() const;
+        std::string textDot(std::string text, int size);
     };
 #endif
