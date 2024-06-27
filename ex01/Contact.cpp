@@ -4,6 +4,8 @@
 Contact::Contact()
     : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("") {}
 
+Contact::~Contact() {}
+
 std::string Contact::getFirstName() const
 {
     return first_name;

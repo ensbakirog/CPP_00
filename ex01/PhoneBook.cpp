@@ -6,31 +6,67 @@
 
 PhoneBook::PhoneBook() : currentIndex(0), countOfMember(0) {}
 
+PhoneBook::~PhoneBook() {}
+
 void PhoneBook::add()
 {
     std::system("clear");
     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
     
-    std::cout << "Enter First Name: ";
-    std::cin.ignore();
-    std::getline(std::cin, firstName);
-    std::system("clear");
+    do {
+        std::cout << "Enter First Name: ";
+        std::getline(std::cin, firstName);
+        std::system("clear");
+        if (firstName.empty() || checkSpace(firstName)) {
+            std::cout << "First Name Can't be " << RED << "EMPTY!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (firstName.empty() || checkSpace(firstName));
 
-    std::cout << "Enter Last Name: ";
-    std::getline(std::cin, lastName);
-    std::system("clear");
-    
-    std::cout << "Enter Nickname: ";
-    std::getline(std::cin, nickname);
-    std::system("clear");
+    do {
+        std::cout << "Enter Last Name: ";
+        std::getline(std::cin, lastName);
+        std::system("clear");
+        if (lastName.empty() || checkSpace(lastName)) {
+            std::cout << "Last Name Can't be " << RED << "EMPTY!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (lastName.empty() || checkSpace(lastName));
 
-    std::cout << "Enter Phone Number: ";
-    std::getline(std::cin, phoneNumber);
-    std::system("clear");
+    do {
+        std::cout << "Enter Nickname: ";
+        std::getline(std::cin, nickname);
+        std::system("clear");
+        if (nickname.empty() || checkSpace(nickname)) {
+            std::cout << "Nickname Can't be " << RED << "EMPTY!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (nickname.empty() || checkSpace(nickname));
 
-    std::cout << "Enter Darkest Secret: ";
-    std::getline(std::cin, darkestSecret);
-    std::system("clear");
+    do {
+        std::cout << "Enter Phone Number: ";
+        std::getline(std::cin, phoneNumber);
+        std::system("clear");
+        if (phoneNumber.empty() || checkSpace(phoneNumber)) {
+            std::cout << "Phone Number Can't be " << RED << "EMPTY!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (phoneNumber.empty() || checkSpace(phoneNumber));
+
+    do {
+        std::cout << "Enter Darkest Secret: ";
+        std::getline(std::cin, darkestSecret);
+        std::system("clear");
+        if (darkestSecret.empty() || checkSpace(darkestSecret)) {
+            std::cout << "Darkest Secret Can't be " << RED << "EMPTY!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (darkestSecret.empty() || checkSpace(darkestSecret));
 
     contacts[currentIndex].setFirstName(firstName);
     contacts[currentIndex].setLastName(lastName);
@@ -41,7 +77,7 @@ void PhoneBook::add()
     currentIndex = (++currentIndex) % COUNT;
     countOfMember = (countOfMember < COUNT) ? ++countOfMember : COUNT;
     std::cout << GREEN << "Contact added SUCCESSFULLY! " << RESET << "[" << countOfMember << "/" << COUNT << "]" << std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
 int PhoneBook::getCountOfMember() const
@@ -56,7 +92,7 @@ void PhoneBook::search()
     {
         std::system("clear");
         std::cout << "PhoneBook is " << RED << "EMPTY!" << RESET << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     else
     {
@@ -100,4 +136,14 @@ std::string PhoneBook::textDot(std::string str, int size)
         return str;
     else
         return str.substr(0, size - 1) + ".";
+}
+
+bool PhoneBook::checkSpace(std::string text)
+{
+    for (int i = 0; text[i]; i++)
+    {
+        if (!std::isspace(text[i]))
+            return false;
+    }
+    return true;
 }

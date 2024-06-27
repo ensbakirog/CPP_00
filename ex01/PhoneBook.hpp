@@ -46,9 +46,11 @@
         int countOfMember;
     public:
         PhoneBook();
+        ~PhoneBook();
         void add();
         void search();
         int getCountOfMember() const;
         std::string textDot(std::string text, int size);
+        bool checkSpace(std::string text);
     };
 #endif
