@@ -1,9 +1,8 @@
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#pragma once
 
-    #include "Contact.hpp"
+#include "Contact.hpp"
 
-    #define COUNT 8
+#define COUNT 8
 
 #define RESET "\033[0m"
 #define RED "\033[31m"
@@ -33,24 +32,21 @@
     "|----------|----------|----------|----------|\n"
 
 #define LAYER \
-    "|----------|----------|----------|----------|\n"
+    "|----------|----------|----------|----------|"
 
 #define LAST_LAYER \
-    "---------------------------------------------\n"
+    "---------------------------------------------"
 
-    class PhoneBook
-    {
-    private:
-        Contact contacts[COUNT];
-        int currentIndex;
-        int countOfMember;
-    public:
-        PhoneBook();
-        ~PhoneBook();
-        void add();
-        void search();
-        int getCountOfMember() const;
-        std::string textDot(std::string text, int size);
-        bool checkSpace(std::string text);
-    };
-#endif
+class PhoneBook
+{
+private:
+    Contact contacts[COUNT];
+    int currentIndex;
+    int countOfMember;
+public:
+    PhoneBook();
+    ~PhoneBook();
+    void add();
+    void search();
+    int getCountOfMember() const;
+};

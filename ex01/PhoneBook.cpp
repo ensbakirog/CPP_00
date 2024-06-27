@@ -8,10 +8,16 @@ PhoneBook::PhoneBook() : currentIndex(0), countOfMember(0) {}
 
 PhoneBook::~PhoneBook() {}
 
+std::string textDot(std::string str, int size);
+bool checkSpace(std::string text);
+bool checkDigit(std::string index);
+
 void PhoneBook::add()
 {
     std::system("clear");
     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
+    
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
     do {
         std::cout << "Enter First Name: ";
@@ -96,7 +102,7 @@ void PhoneBook::search()
     }
     else
     {
-        int index;
+        std::string index;
         std::string tmp;
 
         std::system("clear");
@@ -110,19 +116,25 @@ void PhoneBook::search()
                       << std::setw(10) << textDot(contacts[i].getNickname(), 10) << "|"
                       << std::endl;
             if (i == (countOfMember - 1))
-                std::cout << LAST_LAYER;
+                std::cout << LAST_LAYER << std::endl;
             else
                 std::cout << LAYER << std::endl;
         }
-        std::cout << "Select an index -> ";
-        std::cin >> index;
+
+        do
+        {
+            std::cout << "Select an index -> ";
+            std::cin >> index;
+        } while (checkDigit(index) || !("1" <= index && std::stoi(index) <= countOfMember));
+        
+        
 
         std::system("clear");
-        std::cout << "First Name : " << contacts[index - 1].getFirstName() << std::endl;
-        std::cout << "Last Name : " << contacts[index - 1].getLastName() << std::endl;
-        std::cout << "Nickname : " << contacts[index - 1].getNickname() << std::endl;
-        std::cout << "Phone Number : " << contacts[index - 1].getPhoneNumber() << std::endl;
-        std::cout << "Darkest Secret : " << contacts[index - 1].getDarkestSecret() << std::endl;
+        std::cout << "First Name : " << contacts[std::stoi(index) - 1].getFirstName() << std::endl;
+        std::cout << "Last Name : " << contacts[std::stoi(index) - 1].getLastName() << std::endl;
+        std::cout << "Nickname : "<< contacts[std::stoi(index) - 1].getNickname() << std::endl;
+        std::cout << "Phone Number : " << contacts[std::stoi(index) - 1].getPhoneNumber() << std::endl;
+        std::cout << "Darkest Secret : " << contacts[std::stoi(index) - 1].getDarkestSecret() << std::endl;
 
         std::cout << "Please press enter to go back to the main menu" << std::endl;
         std::cin.ignore();
@@ -130,7 +142,7 @@ void PhoneBook::search()
     }
 }
 
-std::string PhoneBook::textDot(std::string str, int size)
+std::string textDot(std::string str, int size)
 {
     if ((int)str.length() <= size)
         return str;
@@ -138,7 +150,7 @@ std::string PhoneBook::textDot(std::string str, int size)
         return str.substr(0, size - 1) + ".";
 }
 
-bool PhoneBook::checkSpace(std::string text)
+bool checkSpace(std::string text)
 {
     for (int i = 0; text[i]; i++)
     {
@@ -146,4 +158,11 @@ bool PhoneBook::checkSpace(std::string text)
             return false;
     }
     return true;
+}
+bool checkDigit(std::string index)
+{
+    for (int i = 0; index[i]; i++)
+        if (!isdigit(index[i]))
+            return true;
+    return false;
 }
