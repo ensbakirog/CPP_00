@@ -56,12 +56,19 @@ void PhoneBook::add()
         std::cout << "Enter Phone Number: ";
         std::getline(std::cin, phoneNumber);
         std::system("clear");
-        if (phoneNumber.empty() || checkSpace(phoneNumber)) {
-            std::cout << "Phone Number Can't be " << RED << "EMPTY!" << RESET << std::endl;
+        if (phoneNumber.empty() || checkSpace(phoneNumber)) 
+        {
+            std::cout << "Phone Number Can't be " << RED << "EMPTY!" << RESET << std::endl; 
             std::this_thread::sleep_for(std::chrono::seconds(1));
             std::system("clear");
         }
-    } while (phoneNumber.empty() || checkSpace(phoneNumber));
+        else if (checkDigit(phoneNumber))
+        {
+            std::cout << "Phone Number must be " << YELLOW << "NUMBER!" << RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::system("clear");
+        }
+    } while (phoneNumber.empty() || checkSpace(phoneNumber) || checkDigit(phoneNumber));
 
     do {
         std::cout << "Enter Darkest Secret: ";
