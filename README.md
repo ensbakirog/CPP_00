@@ -1,7 +1,3 @@
-Tabii, işte İngilizce çevirisi:
-
----
-
 # C++ Module 00 📚
 
 Welcome to C++ Module 00! This repository contains exercises designed to teach the basics of C++ and Object-Oriented Programming (OOP). Solutions should adhere to the C++98 standard.
