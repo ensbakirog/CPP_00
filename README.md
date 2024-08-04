@@ -64,6 +64,9 @@ I completed this project and here are the requirements for this project:
  ![ADD](https://github.com/user-attachments/assets/18f03df5-4d9e-4437-91e9-9c23300387ad)
  
   - **SEARCH:** Displays the stored contacts in a table format. The table includes columns for index, first name, last name, and nickname, with each column being 10 characters wide. Text should be right-aligned, and overly long text should be truncated with a period (’.').
+
+![SEARCH](https://github.com/user-attachments/assets/9e9d93b9-22da-4d97-ba8a-7054c4365861)
+
   - **EXIT:** Closes the program and deletes all stored contacts.
 
 ### Example Commands:
