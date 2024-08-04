@@ -54,7 +54,7 @@
         <p>Welcome to C++ Module 00! This repository contains exercises designed to teach the basics of C++ and Object-Oriented Programming (OOP). Solutions should adhere to the C++98 standard.</p>
         <div class="video-container">
             <video width="640" height="360" controls autoplay loop>
-                <source src="your-video-file.mp4" type="video/mp4">
+                <source src="video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
