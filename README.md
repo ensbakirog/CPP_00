@@ -47,6 +47,8 @@ $> ./megaphone
 
 ## Exercise 01: My Awesome PhoneBook 📖📞
 
+![video](https://github.com/user-attachments/assets/ff35442c-871c-48d5-80c6-0969ebbfe888)
+
 I completed this project and here are the requirements for this project:
 
 **Objective:** Create a phone book application that allows users to manage contact information.
@@ -55,8 +57,6 @@ I completed this project and here are the requirements for this project:
 - **Storing Contact Information:**
   - The `PhoneBook` class should be designed to hold up to 8 contacts. When adding a 9th contact, the oldest one should be removed.
   - Use the `Contact` class to store information about each person.
-
-![video](https://github.com/user-attachments/assets/ff35442c-871c-48d5-80c6-0969ebbfe888)
 
 - **Commands:**
   - **ADD:** Adds a new contact. Prompts the user for first name, last name, nickname, phone number, and darkest secret.
