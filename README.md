@@ -59,6 +59,7 @@ I completed this project and here are the requirements for this project:
   - Use the `Contact` class to store information about each person.
 
 - **Commands:**
+
   - **ADD:** Adds a new contact. Prompts the user for first name, last name, nickname, phone number, and darkest secret.
 
 ![ADD](https://github.com/user-attachments/assets/3d988127-7d20-47f5-bae6-f34d1f27ebd0)
