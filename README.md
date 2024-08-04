@@ -70,3 +70,5 @@ I completed this project and here are the requirements for this project:
 - Dynamic memory allocation is prohibited; use fixed-size arrays.
 - The contact list must be properly formatted and aligned.
 - Handle user inputs and edge cases robustly.
+
+![Video](https://github.com/user-attachments/assets/e411b064-6b79-42b4-93a6-bbfc01a0a40d)
