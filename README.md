@@ -62,7 +62,7 @@ I completed this project and here are the requirements for this project:
 
   - **ADD:** Adds a new contact. Prompts the user for first name, last name, nickname, phone number, and darkest secret.
 
-  ![ADD](https://github.com/user-attachments/assets/3d988127-7d20-47f5-bae6-f34d1f27ebd0)
+![ADD](https://github.com/user-attachments/assets/3d988127-7d20-47f5-bae6-f34d1f27ebd0)
  
   - **SEARCH:** Displays the stored contacts in a table format. The table includes columns for index, first name, last name, and nickname, with each column being 10 characters wide. Text should be right-aligned, and overly long text should be truncated with a period (’.').
 
