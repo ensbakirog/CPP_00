@@ -56,6 +56,8 @@ I completed this project and here are the requirements for this project:
   - The `PhoneBook` class should be designed to hold up to 8 contacts. When adding a 9th contact, the oldest one should be removed.
   - Use the `Contact` class to store information about each person.
 
+![video](https://github.com/user-attachments/assets/ff35442c-871c-48d5-80c6-0969ebbfe888)
+
 - **Commands:**
   - **ADD:** Adds a new contact. Prompts the user for first name, last name, nickname, phone number, and darkest secret.
   - **SEARCH:** Displays the stored contacts in a table format. The table includes columns for index, first name, last name, and nickname, with each column being 10 characters wide. Text should be right-aligned, and overly long text should be truncated with a period (’.').
@@ -70,7 +72,3 @@ I completed this project and here are the requirements for this project:
 - Dynamic memory allocation is prohibited; use fixed-size arrays.
 - The contact list must be properly formatted and aligned.
 - Handle user inputs and edge cases robustly.
-
-![video](https://github.com/user-attachments/assets/ff35442c-871c-48d5-80c6-0969ebbfe888)
-
-
